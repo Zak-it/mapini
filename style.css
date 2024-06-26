@@ -1,0 +1,224 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  height: 100vh;
+  overflow: hidden;
+  padding: 2.5rem;
+}
+
+.container {
+  background-color: #f1f0e8;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  height: 90%;
+  overscroll-behavior-y: none;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  height: 100%;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: #adc4ce;
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  width: 90%;
+}
+
+.form-section {
+  display: flex;
+  padding: 5px;
+  justify-content: space-between;
+}
+/* 
+.form__row {
+  display: flex;
+  justify-content: flex-end; 
+  width: 100%;
+  margin-bottom: 10px; 
+} */
+
+.copyright {
+  text-align: center;
+  font-size: 10pt;
+  font-weight: bold;
+  margin-top: auto;
+  padding-top: 10px;
+  padding-bottom: 15px;
+}
+
+img {
+  max-width: 150px;
+}
+
+label {
+  font-size: 8pt;
+}
+
+input,
+select {
+  width: 90px;
+  margin-left: 10px;
+}
+
+.leaflet-popup .leaflet-popup-content-wrapper {
+  background: #3e3d3d;
+  border-color: red;
+}
+
+.leaflet-popup .leaflet-popup-tip {
+  background: #3e3d3d;
+  color: #333;
+  box-shadow: 0 3px 14px rgba(0, 0, 0, 0.4);
+}
+
+.running-popup .leaflet-popup-content-wrapper {
+  border-left: 5px solid #36ba98;
+}
+
+.cycling-popup .leaflet-popup-content-wrapper {
+  border-left: 5px solid #e76f51;
+}
+
+.hidden,
+.submitbtn,
+.form__row--hidden {
+  display: none;
+}
+
+.leaflet-popup-content {
+  margin: 13px 19px;
+  line-height: 1.4;
+  color: wheat;
+  font-weight: 700;
+}
+
+.workout {
+  background-color: #adc4ce;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+.workout__title {
+  grid-column: span 4;
+  font-size: 10pt;
+}
+
+.workout__details {
+  padding-left: 10px;
+  font-weight: 700;
+}
+
+.workout--running {
+  border-left: 5px solid #36ba98;
+}
+
+.workout--cycling {
+  border-left: 5px solid #e76f51;
+}
+
+.workoutsec {
+  overflow-y: auto;
+  flex-grow: 1;
+  padding: 10px;
+  box-sizing: border-box;
+  max-height: calc(100vh - 280px);
+  width: 100%;
+}
+
+.workoutsec.full-height {
+  max-height: calc(100vh - 200px);
+}
+
+/* WebKit browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 12px; /* Width of the entire scrollbar */
+  height: 12px; /* Height of the entire scrollbar (for horizontal scrollbars) */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Color of the scrollbar track */
+  border-radius: 10px; /* Rounded corners */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #888; /* Color of the scrollbar thumb */
+  border-radius: 10px; /* Rounded corners */
+  border: 3px solid #f1f1f1; /* Creates padding around the thumb for a smaller thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Darker color when hovered */
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin; /* Thin scrollbar */
+  scrollbar-color: #888 #f1f1f1; /* Thumb and track colors */
+}
+
+/*add mebu dop    */
+.workout {
+  position: relative;
+  /* existing styles */
+}
+
+.workout__menu {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.workout__menu-icon {
+  font-size: 18px;
+}
+
+.workout__menu-dropdown {
+  position: absolute;
+  top: 20px;
+  right: 0;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: auto; /* Enable scrolling if content exceeds max-height */
+  max-height: 200px; /* Set a max-height for the dropdown */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000; /* Ensure the dropdown appears above other elements */
+}
+.workout__menu-dropdown.hidden {
+  display: none;
+}
+
+.workout__menu-item {
+  padding: 8px 12px;
+  cursor: pointer;
+  padding-top: 6px;
+  font-size: 9pt;
+}
+
+.workout__menu-item:hover {
+  background: #f1f1f1;
+}

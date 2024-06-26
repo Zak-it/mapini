@@ -46,13 +46,6 @@ body {
   padding: 5px;
   justify-content: space-between;
 }
-/* 
-.form__row {
-  display: flex;
-  justify-content: flex-end; 
-  width: 100%;
-  margin-bottom: 10px; 
-} */
 
 .copyright {
   text-align: center;
@@ -111,7 +104,6 @@ select {
 
 .workout {
   background-color: #adc4ce;
-
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
@@ -179,10 +171,9 @@ select {
   scrollbar-color: #888 #f1f1f1; /* Thumb and track colors */
 }
 
-/*add mebu dop    */
+/*add menu dropdown*/
 .workout {
   position: relative;
-  /* existing styles */
 }
 
 .workout__menu {
@@ -203,11 +194,12 @@ select {
   background: white;
   border: 1px solid #ccc;
   border-radius: 5px;
-  overflow: auto; /* Enable scrolling if content exceeds max-height */
-  max-height: 200px; /* Set a max-height for the dropdown */
+  overflow: auto;
+  max-height: 200px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  z-index: 1000; /* Ensure the dropdown appears above other elements */
+  z-index: 1000;
 }
+
 .workout__menu-dropdown.hidden {
   display: none;
 }
@@ -221,4 +213,76 @@ select {
 
 .workout__menu-item:hover {
   background: #f1f1f1;
+}
+
+/* Media Queries */
+@media only screen and (max-width: 768px) {
+  body {
+    padding: 1.5rem;
+  }
+
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    height: auto;
+  }
+
+  .sidebar {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5px;
+    height: auto;
+  }
+
+  .form {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+
+  .form-section {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .workout {
+    grid-template-columns: 1fr 1fr;
+    font-size: 10px;
+  }
+
+  .workout__title {
+    grid-column: span 2;
+  }
+
+  .workout__details {
+    padding-left: 5px;
+  }
+
+  input,
+  select {
+    width: auto;
+    margin-left: 5px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  body {
+    padding: 1rem;
+  }
+
+  .sidebar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .form {
+    grid-template-columns: 1fr;
+  }
+
+  .workout {
+    grid-template-columns: 1fr;
+  }
+
+  .workout__title {
+    grid-column: span 1;
+  }
 }
